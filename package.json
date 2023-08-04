@@ -1,0 +1,30 @@
+{
+  "name": "mocha-appium-app-browserstack",
+  "version": "1.0.0",
+  "description": "Mocha nodeJS Appium integration with BrowserStack",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/browserstack/mocha-appium-app-browserstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/browserstack/mocha-appium-app-browserstack/issues"
+  },
+  "homepage": "https://github.com/browserstack/mocha-appium-app-browserstack#readme",
+  "devDependencies": {
+    "appium": "^2.0.0",
+    "appium-android-driver": "^5.14.0",
+    "appium-uiautomator2-driver": "^2.29.3",
+    "browserstack-local": "^1.5.4",
+    "mocha": "^10.2.0",
+    "webdriverio": "^8.14.3"
+  },
+  "dependencies": {
+    "assert": "^2.0.0"
+  }
+}
