@@ -1,41 +1,17 @@
-const https = require("https");
 const { Builder, By, until } = require("selenium-webdriver");
-var assert = require('assert'),
-  browserstack = require('browserstack-local'),
-  conf_file = process.argv[3] || 'conf/local.conf.js';
-  
-var caps = require('../' + conf_file).capabilities;
-caps['bstack:options'].source = 'mocha:sample-appium-4:v1.0';
+var assert = require('assert');
 
-var buildDriver = function(caps) {
+var buildDriver = function() {
   return new Builder()
-    .usingServer('https://hub.browserstack.com/wd/hub')
-    .withCapabilities(caps)
-    .usingHttpAgent(
-      new https.Agent({
-        keepAlive: true,
-        keepAliveMsecs: 1000000,
-      })
-    )
+    .usingServer('http://127.0.0.1:4723/wd/hub')
     .build();
 };
 
 describe('BrowserStack Local Testing', function() {
   this.timeout(0);
-  var driver, bsLocal;
-
-  beforeEach(async function() {
-    bsLocal = new browserstack.Local();
-    await new Promise((resolve, reject) => {
-        bsLocal.start({ 'key': caps['bstack:options'].accessKey }, function(error) {
-          if (error) reject(error);
-          driver = buildDriver(caps);
-          resolve();
-        });
-    });
-  });
 
   it('check tunnel is working', async function () {
+    let driver = buildDriver();
     try {
       await driver.wait(
         until.elementLocated(
@@ -61,16 +37,5 @@ describe('BrowserStack Local Testing', function() {
           'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed","reason": "Some elements failed to load"}}'
         );
       }
-  });
-
-  afterEach(async function() {
-    await driver.quit();
-    await new Promise((resolve, reject) => {
-        bsLocal.stop(function(error) {
-          if(error) reject("Error in stopping BrowserStack Local :" + error);
-          console.log("Stopped BrowserStack Local");
-          resolve();
-        });
-      });
   });
 });

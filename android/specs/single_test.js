@@ -1,22 +1,9 @@
 const { Builder, By, until } = require("selenium-webdriver");
 const assert = require("assert");
-const https = require("https");
-const conf_file = process.argv[3] || 'conf/single.conf.js';
 
-// Set up desired capabilities for BrowserStack
-var capabilities = require('../' + conf_file).capabilities;
-capabilities['bstack:options'].source = 'mocha:sample-appium-4:v1.0';
-
-var buildDriver = function (capabilities) {
+var buildDriver = function() {
   return new Builder()
-    .usingServer("https://hub.browserstack.com/wd/hub")
-    .withCapabilities(capabilities)
-    .usingHttpAgent(
-      new https.Agent({
-        keepAlive: true,
-        keepAliveMsecs: 1000000,
-      })
-    )
+    .usingServer('http://127.0.0.1:4723/wd/hub')
     .build();
 };
 
@@ -26,7 +13,7 @@ describe("Search Wikipedia Functionality", function () {
   var driver;
 
   beforeEach(function (done) {
-    driver = buildDriver(capabilities);
+    driver = buildDriver();
     done();
   });
 

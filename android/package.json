@@ -4,10 +4,9 @@
   "description": "Mocha nodeJS Appium integration with BrowserStack",
   "main": "index.js",
   "scripts": {
-    "test": "npm run single && npm run local && npm run parallel",
-    "single": "./node_modules/.bin/mocha specs/single_test.js conf/single.conf.js --timeout=120000",
-    "local": "./node_modules/.bin/mocha specs/local_test.js conf/local.conf.js --timeout=120000",
-    "parallel": "./node_modules/.bin/mocha specs/parallel_test.js conf/parallel.conf.js --timeout=120000"
+    "sample-test": "browserstack-node-sdk mocha specs/single_test.js",
+    "sample-local-test": "browserstack-node-sdk mocha specs/local_test.js",
+    "postinstall": "npm update browserstack-node-sdk"
   },
   "repository": {
     "type": "git",
@@ -20,11 +19,15 @@
   },
   "homepage": "https://github.com/browserstack/mocha-appium-app-browserstack#readme",
   "dependencies": {
-    "browserstack-local": "^1.5.4",
-    "mocha": "^10.2.0",
     "selenium-webdriver": "^4.1.2",
+    "mocha": "^10.2.0",
     "assert": "^2.0.0",
-    "bluebird": "^3.4.6",
-    "mocha.parallel": "^0.12.0"
+    "browserstack-local": "^1.5.4"
+  },
+  "engines": {
+    "node": "^6"
+  },
+  "devDependencies": {
+    "browserstack-node-sdk": "latest"
   }
 }
