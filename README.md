@@ -59,7 +59,7 @@ Open `single.conf.js` file in `Android` or in `ios` folder
 
 - If you have uploaded your own app update the test case
 
-- Run `npm run single`
+- Run `npm run single` from android or ios folder
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
@@ -95,7 +95,7 @@ Open `local.conf.js` file in `Android` or in `ios` folder
 
 - If you have uploaded your own app update the test case
 
-- Run `npm run local`
+- Run `npm run local` from android or ios folder
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
@@ -112,7 +112,7 @@ Open `parallel.conf.js` file in `Android` or in `ios` folder
 
 - If you have uploaded your own app update the test case
 
-- Run `npm run parallel`
+- Run `npm run parallel` from android or ios folder
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
