@@ -8,9 +8,9 @@ exports.capabilities = {
     "appium:osVersion": "16",
     "appium:app" : "bs://<app-id>",
     'bstack:options' : {
-        "projectName" : "Mocha iOS Test Project",
+        "projectName" : "BStack Demo",
         "buildName" : "browserstack-build-1",
-        "sessionName" : "first_test",
+        "sessionName" : "BStack single mocha-js",
         "userName" : USERNAME,
         "accessKey" : ACCESS_KEY,
         "debug" : true

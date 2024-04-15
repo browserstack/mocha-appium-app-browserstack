@@ -4,7 +4,7 @@ var config = {
       'accessKey': process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
       'buildName': 'browserstack-build-1',
       'debug': 'true',
-      "projectName" : "Mocha iOS Test Project",
+      "projectName" : "BStack Demo",
       "debug" : true
     },
     'multiCapabilities': [{
