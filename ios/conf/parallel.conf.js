@@ -50,3 +50,4 @@ var config = {
     };
     exports.capabilities.push(caps);
   });
+  
