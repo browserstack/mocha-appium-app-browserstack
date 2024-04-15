@@ -37,17 +37,15 @@ var config = {
             "sessionName" : "Bstack parallel mocha",
         }
       }
-]
+]};
+  
+exports.capabilities = [];
+// Code to support common capabilities
+config.multiCapabilities.forEach(function(caps) {
+  var temp_caps = JSON.parse(JSON.stringify(config.commonCapabilities));
+  caps['bstack:options'] = {
+    ...caps['bstack:options'],
+    ...temp_caps
   };
-  
-  exports.capabilities = [];
-  // Code to support common capabilities
-  config.multiCapabilities.forEach(function(caps) {
-    var temp_caps = JSON.parse(JSON.stringify(config.commonCapabilities));
-    caps['bstack:options'] = {
-      ...caps['bstack:options'],
-      ...temp_caps
-    };
-    exports.capabilities.push(caps);
-  });
-  
+  exports.capabilities.push(caps);
+});
