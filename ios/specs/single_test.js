@@ -21,7 +21,7 @@ var buildDriver = function (capabilities) {
 };
 
 // Mocha test case
-describe("Search Wikipedia Functionality", function () {
+describe("Test sample app UI Elements", function () {
   this.timeout(0);
   var driver;
 
@@ -30,7 +30,7 @@ describe("Search Wikipedia Functionality", function () {
     done();
   });
 
-  it("should search Wikipedia", async function () {
+  it("should input a text", async function () {
     try {
       await driver.wait(
         until.elementLocated(

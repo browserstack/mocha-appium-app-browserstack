@@ -26,7 +26,7 @@ var buildDriver = function (caps) {
 
 parallel("Tests ", function () {
   capabilities.forEach(function (caps) {
-    it("should search Wikipedia", async function () {
+    it("should input a text", async function () {
         var driver;
       try {
         driver = await buildDriver(caps);
