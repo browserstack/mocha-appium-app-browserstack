@@ -8,3 +8,4 @@ local.log
 
 android/package-lock.json
 ios/package-lock.json
+package-lock.json
