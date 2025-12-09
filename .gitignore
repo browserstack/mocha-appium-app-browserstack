@@ -5,3 +5,7 @@ local.log
 
 .vscode/
 .env
+
+android/package-lock.json
+ios/package-lock.json
+package-lock.json

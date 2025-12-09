@@ -30,6 +30,8 @@ source: node:appium-sample-sdk:v1.0
 app: ./BStackSampleApp.ipa
 # app: ./LocalSample.ipa #For running local tests
 
+CUSTOM_TAG_1: bstack_sample
+
 # =======================================
 # Platforms (Browsers / Devices to test)
 # =======================================
@@ -43,8 +45,7 @@ platforms:
   - deviceName: iPhone 13 Pro
     osVersion: 15
     platformName: ios
-  - deviceName: iPhone 15 Plus
-    osVersion: 17
+  - deviceName: iPhone 15 Pro
     platformName: ios
 
 # ==========================================
